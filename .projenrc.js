@@ -50,7 +50,6 @@ const project = new GemeenteNijmegenCdkApp({
   gitignore: [
     '.env',
     '.vscode',
-    'src/app/**/shared',
     '.DS_Store',
     'src/app/**/tests/output',
   ],
