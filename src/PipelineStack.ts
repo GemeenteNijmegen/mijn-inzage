@@ -2,8 +2,8 @@ import { PermissionsBoundaryAspect } from '@gemeentenijmegen/aws-constructs';
 import { Stack, StackProps, Tags, pipelines, CfnParameter, Aspects } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { Configurable } from './Configuration';
-import { ParameterStage } from './ParameterStage';
 import { InzageApiStage } from './InzageApiStage';
+import { ParameterStage } from './ParameterStage';
 import { Statics } from './statics';
 
 export interface PipelineStackProps extends StackProps, Configurable {}

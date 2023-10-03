@@ -1,6 +1,6 @@
 import { Stack, Tags, Stage, aws_ssm as SSM, aws_secretsmanager as SecretsManager, StageProps } from 'aws-cdk-lib';
-import { Configurable } from './Configuration';
 import { Construct } from 'constructs';
+import { Configurable } from './Configuration';
 import { Statics } from './statics';
 
 export interface ParameterStageProps extends StageProps, Configurable {}
