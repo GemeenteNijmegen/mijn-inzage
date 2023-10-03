@@ -43,7 +43,30 @@
     },
     "bundle": {
       "name": "bundle",
-      "description": "Prepare assets"
+      "description": "Prepare assets",
+      "steps": [
+        {
+          "spawn": "bundle:app/inzage/inzage.lambda"
+        }
+      ]
+    },
+    "bundle:app/inzage/inzage.lambda": {
+      "name": "bundle:app/inzage/inzage.lambda",
+      "description": "Create a JavaScript bundle from src/app/inzage/inzage.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+        }
+      ]
+    },
+    "bundle:app/inzage/inzage.lambda:watch": {
+      "name": "bundle:app/inzage/inzage.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/app/inzage/inzage.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+        }
+      ]
     },
     "clobber": {
       "name": "clobber",
@@ -136,7 +159,7 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools .projenrc.js"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src src/app/persoonsgegevens/tests /test /build-tools .projenrc.js"
         }
       ]
     },
@@ -187,9 +210,9 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
-    "release": {
-      "name": "release",
-      "description": "Prepare a release from \"main\" branch",
+    "release:production": {
+      "name": "release:production",
+      "description": "Prepare a release from \"production\" branch",
       "env": {
         "RELEASE": "true",
         "MAJOR": "0"
@@ -279,13 +302,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@gemeentenijmegen/projen-project-type,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-cdk,esbuild,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,aws-cdk-lib,constructs"
+          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@types/jest,@types/mustache,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-cdk,esbuild,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@gemeentenijmegen/apiclient,@gemeentenijmegen/aws-constructs,@gemeentenijmegen/session,@gemeentenijmegen/utils,aws-cdk-lib,axios,constructs,dotenv,mustache"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @gemeentenijmegen/projen-project-type @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit npm-check-updates projen standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit npm-check-updates projen standard-version ts-jest ts-node typescript @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @gemeentenijmegen/apiclient @gemeentenijmegen/aws-constructs @gemeentenijmegen/session @gemeentenijmegen/utils aws-cdk-lib axios constructs dotenv mustache"
         },
         {
           "exec": "npx projen"

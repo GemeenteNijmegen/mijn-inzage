@@ -4,6 +4,8 @@
     "build": "npx projen build",
     "bump": "npx projen bump",
     "bundle": "npx projen bundle",
+    "bundle:app/inzage/inzage.lambda": "npx projen bundle:app/inzage/inzage.lambda",
+    "bundle:app/inzage/inzage.lambda:watch": "npx projen bundle:app/inzage/inzage.lambda:watch",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "default": "npx projen default",
@@ -17,7 +19,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
-    "release": "npx projen release",
+    "release:production": "npx projen release:production",
     "synth": "npx projen synth",
     "synth:silent": "npx projen synth:silent",
     "test": "npx projen test",
@@ -29,11 +31,13 @@
   },
   "devDependencies": {
     "@gemeentenijmegen/projen-project-type": "^1.5.4",
+    "@glen/jest-raw-loader": "^2.0.0",
     "@types/jest": "^29.5.5",
+    "@types/mustache": "^4.2.3",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
-    "aws-cdk": "^2.1.0",
+    "aws-cdk": "^2.41.0",
     "esbuild": "^0.19.4",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.9",
@@ -49,12 +53,48 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.5"
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.99.1-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.99.1-alpha.0",
+    "@aws-sdk/client-dynamodb": "^3.421.0",
+    "@aws-sdk/client-secrets-manager": "^3.421.0",
+    "@gemeentenijmegen/apiclient": "^0.0.8",
+    "@gemeentenijmegen/aws-constructs": "^0.0.4",
+    "@gemeentenijmegen/session": "^0.0.8",
+    "@gemeentenijmegen/utils": "^0.0.5",
+    "aws-cdk-lib": "^2.41.0",
+    "axios": "^1.5.1",
+    "constructs": "^10.0.5",
+    "dotenv": "^16.3.1",
+    "mustache": "^4.2.0"
   },
   "license": "EUPL-1.2",
   "version": "0.0.0",
   "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx",
+      "node",
+      "mustache"
+    ],
+    "transform": {
+      "\\.[jt]sx?$": "ts-jest",
+      "^.+\\.mustache$": "@glen/jest-raw-loader"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cdk.out",
+      "/test/playwright"
+    ],
+    "roots": [
+      "src",
+      "test"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)"
@@ -70,10 +110,9 @@
     ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "/cdk.out",
+      "/test/playwright"
     ],
     "watchPathIgnorePatterns": [
       "/node_modules/"

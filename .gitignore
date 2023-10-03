@@ -30,6 +30,8 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+src/app/**/shared
+src/app/**/tests/output
 test-reports/junit.xml
 test/__snapshots__/*
 .env
@@ -60,5 +62,6 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+!/src/app/inzage/inzage-function.ts
 !/.github/workflows/emergency.yml
 !/.github/workflows/auto-merge.yml

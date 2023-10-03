@@ -145,8 +145,10 @@
       "error",
       {
         "devDependencies": [
-          "**/test/**",
-          "**/build-tools/**"
+          "**/src/app/persoonsgegevens/tests/**",
+          "**//test/**",
+          "**//build-tools/**",
+          "src/app/inzage/inzage.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

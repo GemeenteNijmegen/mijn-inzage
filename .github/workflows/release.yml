@@ -4,7 +4,7 @@ name: release
 on:
   push:
     branches:
-      - main
+      - production
   workflow_dispatch: {}
 jobs:
   release:
@@ -28,8 +28,8 @@ jobs:
         uses: scottbrenner/cfn-lint-action@v2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
-      - name: release
-        run: npx projen release
+      - name: release:production
+        run: npx projen release:production
       - name: CloudFormation lint
         run: npx projen lint
       - name: Check for new commits
