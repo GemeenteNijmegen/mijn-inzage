@@ -4,7 +4,6 @@ import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-al
 import { aws_secretsmanager, Stack, aws_ssm as SSM, aws_kms } from 'aws-cdk-lib';
 import { ITable, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { Role } from 'aws-cdk-lib/aws-iam';
-import { Function } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { ApiFunction } from './ApiFunction';
 import { InzageFunction } from './app/inzage/inzage-function';
@@ -47,12 +46,6 @@ export class InzageApiStack extends Stack {
     const tlskeyParam = SSM.StringParameter.fromStringParameterName(this, 'tlskey', Statics.ssmMTLSClientCert);
     const tlsRootCAParam = SSM.StringParameter.fromStringParameterName(this, 'tlsrootca', Statics.ssmMTLSRootCA);
 
-    const monitoringLambdaArn = SSM.StringParameter.valueForStringParameter(this, Statics.ssmMonitoringLambdaArn);
-    const monitoringFunction = Function.fromFunctionAttributes(this, 'monitoring', {
-      functionArn: monitoringLambdaArn,
-      sameEnvironment: true,
-    });
-
     const readOnlyRole = Role.fromRoleArn(this, 'readonly', SSM.StringParameter.valueForStringParameter(this, Statics.ssmReadOnlyRoleArn));
 
     const inzageFunction = new ApiFunction(this, 'inzage-function', {
@@ -68,7 +61,6 @@ export class InzageApiStack extends Stack {
         INZAGE_BASE_URL: SSM.StringParameter.valueForStringParameter(this, Statics.ssmInzageApiEndpointUrl),
         INZAGE_API_KEY_ARN: inzageApiKey.secretArn,
       },
-      monitoredBy: monitoringFunction,
       apiFunction: InzageFunction,
       readOnlyRole: readOnlyRole,
     });

@@ -7,7 +7,6 @@ export abstract class Statics {
   static readonly ssmApiGatewayId: string = '/cdk/mijn-nijmegen/apigateway-id';
   static readonly ssmSessionsTableArn: string = '/cdk/mijn-nijmegen/sessionstable-arn';
   static readonly ssmDataKeyArn: string = '/cdk/mijn-nijmegen/kms-datakey-arn';
-  static readonly ssmMonitoringLambdaArn: string = '/cdk/mijn-nijmegen/monitoring-lambda-arn';
   static readonly ssmReadOnlyRoleArn: string = '/cdk/mijn-nijmegen/role-readonly-arn';
 
   /**
