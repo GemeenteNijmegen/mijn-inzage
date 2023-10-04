@@ -55,7 +55,7 @@ export class ssmParamsConstruct extends Construct {
     });
 
     new SSM.StringParameter(this, 'ssm_inzage_1', {
-      stringValue: 'https://g423bazyr0.execute-api.eu-west-1.amazonaws.com/dev/',
+      stringValue: 'https://api.vwlog-accp.csp-nijmegen.nl',
       parameterName: Statics.ssmInzageApiEndpointUrl,
     });
 
