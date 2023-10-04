@@ -47,7 +47,7 @@ class InzageApi {
       const startDate = this.parseDate(startString);
       const endDate = this.parseDate(endString);
       const apiKey = await this.getApiKey();
-      let data = await this.request(
+      let data = JSON.parse(await this.request(
         {
           objectType: 'persoon',
           soortObjectId: 'BSN',
@@ -58,11 +58,11 @@ class InzageApi {
         {
           'Content-type': 'application/json',
           'X-Api-Key': apiKey,
-        });
+        }));
 
-      console.debug(data)
-      console.debug(data.Items)
-      
+      console.debug(data);
+      console.debug(data.Items); // Geeft een undefined
+
       if (data?.Items) {
         data.Items = data.Items.map((item: any) => {
           let date = new Date(item.tijdstipRegistratie);
