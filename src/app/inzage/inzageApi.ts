@@ -49,7 +49,7 @@ class InzageApi {
       const apiKey = await this.getApiKey();
       let data = await this.request(
         {
-          objecttype: 'persoon',
+          objectType: 'persoon',
           soortObjectId: 'BSN',
           objectId: aBsn.bsn,
           beginDatum: startDate,
@@ -82,6 +82,7 @@ class InzageApi {
 
   async request(params: any, headers: any): Promise<any> {
     try {
+      console.log('params: ' + params)
       const response = await axios.get('verwerkingsacties', {
         params,
         headers,
