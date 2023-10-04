@@ -60,6 +60,8 @@ class InzageApi {
           'X-Api-Key': apiKey,
         });
 
+      console.debug(data)
+      
       if (data?.Items) {
         data.Items = data.Items.map((item: any) => {
           let date = new Date(item.tijdstipRegistratie);
@@ -82,7 +84,6 @@ class InzageApi {
 
   async request(params: any, headers: any): Promise<any> {
     try {
-      console.log('params: ' + params)
       const response = await axios.get('verwerkingsacties', {
         params,
         headers,
