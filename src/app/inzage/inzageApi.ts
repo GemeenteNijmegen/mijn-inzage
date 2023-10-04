@@ -60,9 +60,6 @@ class InzageApi {
           'X-Api-Key': apiKey,
         }));
 
-      console.debug(data);
-      console.debug(data.Items); // Geeft een undefined
-
       if (data?.Items) {
         data.Items = data.Items.map((item: any) => {
           let date = new Date(item.tijdstipRegistratie);
