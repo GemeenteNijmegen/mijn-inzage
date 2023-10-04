@@ -61,6 +61,7 @@ class InzageApi {
         });
 
       console.debug(data)
+      console.debug(data.Items)
       
       if (data?.Items) {
         data.Items = data.Items.map((item: any) => {
