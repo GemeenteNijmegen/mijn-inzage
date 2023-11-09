@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.104.0-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.104.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.105.0-alpha.0",
     "@aws-sdk/client-dynamodb": "^3.445.0",
     "@aws-sdk/client-secrets-manager": "^3.445.0",
     "@gemeentenijmegen/apiclient": "^0.0.9",
@@ -62,7 +62,7 @@
     "@gemeentenijmegen/session": "^0.0.8",
     "@gemeentenijmegen/utils": "^0.0.5",
     "aws-cdk-lib": "^2.41.0",
-    "axios": "^1.6.0",
+    "axios": "^1.6.1",
     "constructs": "^10.0.5",
     "dotenv": "^16.3.1",
     "mustache": "^4.2.0"
