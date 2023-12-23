@@ -56,7 +56,7 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.114.1-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
     "@aws-sdk/client-dynamodb": "^3.478.0",
-    "@aws-sdk/client-secrets-manager": "^3.478.0",
+    "@aws-sdk/client-secrets-manager": "^3.480.0",
     "@gemeentenijmegen/apiclient": "^0.0.9",
     "@gemeentenijmegen/aws-constructs": "^0.0.4",
     "@gemeentenijmegen/session": "^0.0.8",
