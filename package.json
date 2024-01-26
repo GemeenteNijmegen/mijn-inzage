@@ -59,10 +59,10 @@
     "@aws-sdk/client-secrets-manager": "^3.499.0",
     "@gemeentenijmegen/apiclient": "^0.0.10",
     "@gemeentenijmegen/aws-constructs": "^0.0.4",
-    "@gemeentenijmegen/session": "^0.0.8",
+    "@gemeentenijmegen/session": "^0.0.9",
     "@gemeentenijmegen/utils": "^0.0.5",
     "aws-cdk-lib": "^2.41.0",
-    "axios": "^1.6.6",
+    "axios": "^1.6.7",
     "constructs": "^10.0.5",
     "dotenv": "^16.4.1",
     "mustache": "^4.2.0"
