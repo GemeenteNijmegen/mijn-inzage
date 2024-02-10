@@ -159,7 +159,8 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src src/app/persoonsgegevens/tests /test /build-tools .projenrc.js"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src src/app/persoonsgegevens/tests /test /build-tools .projenrc.js",
+          "receiveArgs": true
         }
       ]
     },
@@ -299,16 +300,13 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@types/jest,@types/mustache,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-cdk,esbuild,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@gemeentenijmegen/apiclient,@gemeentenijmegen/aws-constructs,@gemeentenijmegen/session,@gemeentenijmegen/utils,aws-cdk-lib,axios,constructs,dotenv,mustache"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@gemeentenijmegen/projen-project-type,@glen/jest-raw-loader,@types/jest,@types/mustache,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript,@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha,@aws-sdk/client-dynamodb,@aws-sdk/client-secrets-manager,@gemeentenijmegen/apiclient,@gemeentenijmegen/aws-constructs,@gemeentenijmegen/session,@gemeentenijmegen/utils,axios,dotenv,mustache"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit npm-check-updates projen standard-version ts-jest ts-node typescript @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @gemeentenijmegen/apiclient @gemeentenijmegen/aws-constructs @gemeentenijmegen/session @gemeentenijmegen/utils aws-cdk-lib axios constructs dotenv mustache"
+          "exec": "yarn upgrade @gemeentenijmegen/projen-project-type @glen/jest-raw-loader @types/jest @types/mustache @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit projen standard-version ts-jest ts-node typescript @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha @aws-sdk/client-dynamodb @aws-sdk/client-secrets-manager @gemeentenijmegen/apiclient @gemeentenijmegen/aws-constructs @gemeentenijmegen/session @gemeentenijmegen/utils aws-cdk-lib axios constructs dotenv mustache"
         },
         {
           "exec": "npx projen"
