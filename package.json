@@ -30,7 +30,7 @@
     "projen": "npx projen"
   },
   "devDependencies": {
-    "@gemeentenijmegen/projen-project-type": "^1.5.5",
+    "@gemeentenijmegen/projen-project-type": "^1.5.6",
     "@glen/jest-raw-loader": "^2.0.0",
     "@types/jest": "^29.5.12",
     "@types/mustache": "^4.2.5",
