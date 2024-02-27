@@ -55,7 +55,7 @@
       "description": "Create a JavaScript bundle from src/app/inzage/inzage.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
         }
       ]
     },
@@ -64,7 +64,7 @@
       "description": "Continuously update the JavaScript bundle from src/app/inzage/inzage.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+          "exec": "esbuild --bundle src/app/inzage/inzage.lambda.ts --target=\"node20\" --platform=\"node\" --outfile=\"assets/app/inzage/inzage.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
         }
       ]
     },
