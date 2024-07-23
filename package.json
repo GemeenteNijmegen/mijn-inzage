@@ -48,7 +48,7 @@
     "standard-version": "^9",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.114.1-alpha.0",
@@ -58,7 +58,7 @@
     "@gemeentenijmegen/apiclient": "^0.0.15",
     "@gemeentenijmegen/aws-constructs": "^0.0.15",
     "@gemeentenijmegen/session": "^0.0.12",
-    "@gemeentenijmegen/utils": "^0.0.13",
+    "@gemeentenijmegen/utils": "^0.0.14",
     "aws-cdk-lib": "^2.41.0",
     "axios": "^1.7.2",
     "constructs": "^10.0.5",
