@@ -60,7 +60,7 @@
     "@gemeentenijmegen/session": "^0.0.13",
     "@gemeentenijmegen/utils": "^0.0.14",
     "aws-cdk-lib": "^2.41.0",
-    "axios": "^1.7.3",
+    "axios": "^1.7.4",
     "constructs": "^10.0.5",
     "dotenv": "^16.4.5",
     "mustache": "^4.2.0"
