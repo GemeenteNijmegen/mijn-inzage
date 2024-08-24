@@ -46,7 +46,7 @@
     "jest-junit": "^15",
     "projen": "^0.84.13",
     "standard-version": "^9",
-    "ts-jest": "^29.2.4",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
@@ -60,7 +60,7 @@
     "@gemeentenijmegen/session": "^0.0.13",
     "@gemeentenijmegen/utils": "^0.0.15",
     "aws-cdk-lib": "^2.41.0",
-    "axios": "^1.7.4",
+    "axios": "^1.7.5",
     "constructs": "^10.0.5",
     "dotenv": "^16.4.5",
     "mustache": "^4.2.0"
