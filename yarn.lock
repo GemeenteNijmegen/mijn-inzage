@@ -36,9 +36,9 @@
   integrity sha512-iB7vHoTguDKLeatJS4p/8OBqH4oLCG2xBn1toUFwMD9iWoRGahGiK0pYuq24baab3SuNS1LFThJw5Zu0R+cZGA==
 
 "@aws-cdk/cloud-assembly-schema@^36.0.5":
-  version "36.0.17"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-36.0.17.tgz#9f550601efbff7bd200abf5f62d6ddd1baa3aede"
-  integrity sha512-qZeSDHZCWSigPN9kXAYVHaYMECVNYWpv7I9W9ZDXux0kCmR/JUnj6bmWNG0b8boTn9bxMr4O4cdOKIhDmK6iag==
+  version "36.0.18"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-36.0.18.tgz#bd70d653ed9725a3dd812a25af4bf65d299c99ec"
+  integrity sha512-PP6vgYVoydEh7JKjv/UQccUI2dGfEHlfX+hhI4e3arcT73xmiXP5ck9SrToqgPx4aio3tHTQpnDYeD7l3XV/gQ==
   dependencies:
     jsonschema "^1.4.1"
     semver "^7.6.3"
@@ -1275,10 +1275,10 @@
     "@aws-sdk/client-ssm" "^3.629.0"
     axios "^1.7.4"
 
-"@gemeentenijmegen/aws-constructs@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@gemeentenijmegen/aws-constructs/-/aws-constructs-0.0.17.tgz#b52ad2e2daac8b63919e21e70ed260b82df781eb"
-  integrity sha512-rxRUZHe5MQUNwAwHY1b9E68x9m2VkhosqMq7czeQw67LyCFV+jeqtc8O/jXv0DwD/OKNjegNfdu0zAwOUuY5Yg==
+"@gemeentenijmegen/aws-constructs@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@gemeentenijmegen/aws-constructs/-/aws-constructs-0.0.18.tgz#d01ea83eedda37efdc64212fef7f54d4c5356bbd"
+  integrity sha512-MXvbyQwfd9wGFJl+jP1xrWIV18Fi/kGjqOrVEpMkC/XlvNH/yJdH6ya1NZDCS+OmBAJcBvRmJ7htv1f1b5eBOw==
 
 "@gemeentenijmegen/projen-project-type@^1.7.4":
   version "1.7.4"
